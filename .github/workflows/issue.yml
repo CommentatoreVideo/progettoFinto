@@ -5,6 +5,12 @@ on:
     types: [opened,edited]
 
 jobs:
+  debugUtile:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJson(github) }}
+    steps:
+      - run: echo "$GITHUB_CONTEXT"
   automate-project-columns:
     runs-on: ubuntu-latest
     steps:
