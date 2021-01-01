@@ -12,5 +12,5 @@ jobs:
         with:
           project: Prova
           column: ${{ github.event.label.name }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GH_TOKEN }}
           
