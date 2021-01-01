@@ -1,0 +1,21 @@
+name: Sposta issue nella colonna giusta
+
+on:
+  issues:
+    types: [unlabeled]
+action: delete
+jobs:
+  debugUtile:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJson(github) }}
+    steps:
+      - run: echo "$GITHUB_CONTEXT"
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Prova
+          column: ${{ github.event.label.name }}
+          repo-token: ${{ secrets.GH_TOKEN }}
