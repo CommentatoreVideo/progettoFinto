@@ -1,4 +1,4 @@
-name: Sposta issue nella colonna giusta
+name: Elimina issue
 
 on:
   issues:
