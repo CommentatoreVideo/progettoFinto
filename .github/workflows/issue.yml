@@ -2,7 +2,7 @@ name: Sposta issue nella colonna giusta
 
 on:
   issues:
-    types: [opened,edited]
+    types: [labeled]
 
 jobs:
   debugUtile:
