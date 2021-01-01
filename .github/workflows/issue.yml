@@ -8,6 +8,8 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: altro ciao
+        run: echo "${{ github.label.name }}"
   github-actions-automate-projects:
     runs-on: ubuntu-latest
     steps:
