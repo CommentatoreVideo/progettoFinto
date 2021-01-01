@@ -2,7 +2,7 @@ name: Sposta issue nella colonna giusta
 
 on:
   issues:
-    types: [edited]
+    types: [opened,edited]
 
 jobs:
   automate-project-columns:
