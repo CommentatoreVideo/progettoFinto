@@ -3,7 +3,6 @@ name: Elimina issue
 on:
   issues:
     types: [unlabeled]
-action: delete
 jobs:
   debugUtile:
     runs-on: ubuntu-latest
@@ -19,3 +18,4 @@ jobs:
           project: Prova
           column: ${{ github.event.label.name }}
           repo-token: ${{ secrets.GH_TOKEN }}
+          action: delete
