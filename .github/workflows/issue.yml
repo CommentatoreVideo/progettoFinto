@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ciao
-        run: echo ${{  github.issue.labels  }}
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
   github-actions-automate-projects:
     runs-on: ubuntu-latest
     steps:
