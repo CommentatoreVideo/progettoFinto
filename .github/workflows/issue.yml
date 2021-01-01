@@ -1,6 +1,11 @@
 name: Gestione card progetti
 on: [issues]
 jobs:
+  primo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ciao
+        run: echo github.event
   github-actions-automate-projects:
     runs-on: ubuntu-latest
     steps:
