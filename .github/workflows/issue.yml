@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ciao
-        run: echo ${{  github.event.label  }}
+        run: echo ${{  github.issue.labels  }}
   github-actions-automate-projects:
     runs-on: ubuntu-latest
     steps:
