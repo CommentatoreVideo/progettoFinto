@@ -1,22 +1,16 @@
-name: Gestione card progetti
-on: [issues]
+name: Sposta issue nella colonna giusta
+
+on:
+  issues:
+    types: [edited]
+
 jobs:
-  primo:
+  automate-project-columns:
     runs-on: ubuntu-latest
     steps:
-      - name: ciao
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: altro ciao
-        run: echo "${{ github.event.label.name }}"
-  github-actions-automate-projects:
-    runs-on: ubuntu-latest
-    steps:
-    - name: add-new-issues-to-repository-based-project-column
-      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
-      if: github.event_name == 'issues' && github.event.action == 'labeled'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/CommentatoreVideo/progettoFinto/projects/1
-        GITHUB_PROJECT_COLUMN_NAME: ${{ github.event.label.name }}
+      - uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Prova
+          column: ${{ github.event.label.name }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
