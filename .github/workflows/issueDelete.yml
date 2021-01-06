@@ -2,7 +2,7 @@ name: Elimina issue
 
 on:
   issues:
-    types: [unlabeled]
+    types: [unlabeled,closed]
 jobs:
   debugUtile:
     runs-on: ubuntu-latest
